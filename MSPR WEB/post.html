@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de publication de fleur</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        form {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        form input[type="text"], form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        form input[type="file"] {
+            margin-bottom: 15px;
+        }
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<form id="postForm" enctype="multipart/form-data">
+    <label for="nom">Nom de la fleur :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="description">Description :</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <label for="image">Sélectionner une image :</label>
+    <input type="file" id="image" name="image" accept="image/*" required>
+
+    <button type="submit">Publier</button>
+</form>
+
+<script>
+    document.getElementById('postForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
+        // Ici, vous pouvez ajouter le code pour envoyer les données du formulaire à un serveur backend,
+        // ou pour traiter les données localement si vous le souhaitez.
+
+        // Exemple de traitement local (affichage des données pour cet exemple) :
+        let formData = new FormData(this);
+        console.log('Données du formulaire :');
+        for (let pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
+
+        // Vous pouvez ajouter ici du code pour envoyer les données à un serveur backend avec fetch ou XMLHttpRequest.
+        // Par exemple :
+        /*
+        fetch('url_de_votre_backend', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Réponse du serveur :', data);
+            // Ajouter ici la logique pour gérer la réponse du serveur si nécessaire
+        })
+        .catch(error => console.error('Erreur lors de l\'envoi du formulaire :', error));
+        */
+    });
+</script>
+
+</body>
+</html>

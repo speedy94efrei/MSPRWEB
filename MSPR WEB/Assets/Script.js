@@ -33,6 +33,16 @@ menuItem.forEach(item=>{
     })
 });
 
+// Redirection des pages
+
+document.getElementById('add-post').onclick = function() {
+    // Redirection vers une autre page
+    window.location.href = 'post.html';
+};
+document.getElementById('menu-settings').onclick = function() {
+    // Redirection vers une autre page
+    window.location.href = 'settings.html';
+};
 
 
 

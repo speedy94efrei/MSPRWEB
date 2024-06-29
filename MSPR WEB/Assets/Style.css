@@ -121,12 +121,10 @@ nav .serch-bar input[type="search"]::placeholder{
     align-items: center;
     gap: 2rem;
 }
-.logo h3{
-    font-size: 1.6rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    user-select: none;  
-    color: var(--color-dark);  
+
+.logo img {
+    width: 100px; /* Ajustez la taille selon vos besoins */
+    height: auto;
 }
 .logo span{
     color: var(--color-primary);
