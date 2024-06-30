@@ -234,3 +234,16 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
+.Notif{
+    width: 400 px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(red, green, blue, alpha);
+}
+
+.NotifBox{
+    
+}

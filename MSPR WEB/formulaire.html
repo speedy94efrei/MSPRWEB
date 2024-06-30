@@ -38,7 +38,7 @@
                 <div class="overlay-panel overlay-left">
                     <h1>De retour !</h1>
                     <p>Pour rester en contact avec nous, veuillez vous connecter avec vos informations personnelles.</p>
-                    <button class="ghost" id="signIn">Connecter-Vous</button>
+                    <button class="ghost" id="signIn" onclick="showNotification(ReussiMsg)">Connecter-Vous</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Salut !</h1>
@@ -46,12 +46,35 @@
                     <button class="ghost" id="signUp">S'inscrire</button>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 
+    <div id="NotifBox"></div>
 
 
-   <script src="./Assets/Formulaire.js" charset="UTF-8"></script> 
+
+   <script>
+
+
+let NotifBox = document.getElementById('NotifBox')
+let ReussiMsg = 'Connexion Réussi';
+let EchecMsg = 'Connexion Echec';
+let ServerMsg = 'Probleme Serveur';
+
+function showNotification(msg){
+     let Notif = document.createElement('div');
+       Notif.classList.add('Notif');
+       Notif.innerHTML = msg;
+       NotifBox.body.appendChild(Notif);
+
+
+}
+
+
+
+
+   </script> 
+   <script src="./Assets/Notification.js" charset="UTF-8"></script> 
 </body>
 
 
